@@ -1,0 +1,145 @@
+
+body {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;  /* This, flex-direction column, and margin help keep the footer to the bottom */
+    background-color: #4682B4;
+}
+
+/* header style */
+header {
+  font-size: 15px;
+  text-align: center;
+  background-color: #ADD8E6;
+}
+
+/* adds grid lines to the sketch*/
+.border {
+  border: 0.5px solid black;
+}
+
+/* content of the grid and menu */
+.main-content {
+  margin-top: 100px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.grid-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 550px;
+  height: 550px;
+  background-color: #202020;
+  border-radius: 8px;
+}
+
+/* creates size of boxes */
+.grid-panel { 
+  display: grid; /* positions squares in a grid */
+  width: 500px;
+  height: 500px;  
+  background-color: white;
+  border: 3px solid gray;
+  border-radius: 8px;
+}
+
+.menu {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  width: 300px;
+}
+
+button {
+  width: 90%;
+  padding: 10px 15px;
+  border-radius: 10px;
+  border: 1px solid var(--primary-dark);
+  font-family: "Comic Sans MS", "Comic Sans", cursive;
+}
+
+button:hover,
+input[type='color']:hover {
+  transform: scale(1.15);
+}
+
+/* makes the clicker more smooth */
+button,
+input[type='color'] {
+  transition: transform 0.1s ease-in-out;
+}
+
+input[type='color'] {
+  -webkit-appearance: none;
+  border: none;
+  background-color: transparent;
+  width: 75px;
+  height: 75px;
+}
+
+
+
+input[type="color"]::-webkit-color-swatch-wrapper {
+  padding: 0;
+}
+input[type="color"]::-webkit-color-swatch {
+  border: none;
+  background-color: transparent;
+}
+
+input[type='color']::-webkit-color-swatch {
+  border: none;
+  background-color: transparent;
+  border-radius: 50px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+
+.slider-container {
+  text-align: center;
+  font-family: "Comic Sans MS", "Comic Sans", cursive;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 90%;
+}
+
+input[type="range"] {
+  -webkit-appearance: none;
+  height: 15px;
+  border: 1px solid black;
+  border-radius: 20px;
+  box-shadow: 2px 8px 13px -3px rgba(116, 114, 114, 0.75);
+  -webkit-box-shadow: 2px 8px 13px -3px rgba(116, 114, 114, 0.75);
+  -moz-box-shadow: 2px 8px 13px -3px rgba(116, 114, 114, 0.75); 
+} 
+
+input[type=range]::-webkit-slider-thumb {
+  cursor: pointer; /* changes your pointer */
+  appearance: none;
+  height: 25px;
+  width: 25px;
+  border-radius: 50%;
+  background-color: #20B2AA; /* color of the full thumb */
+  border: 5px solid #87CEFA;
+}
+
+/* footer style */
+footer {
+  width: 100%;
+  margin-top: auto;
+  text-align: center;
+  background-color: #ADD8E6;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}

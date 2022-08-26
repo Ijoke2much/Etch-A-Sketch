@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Etch-A-Sketch</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <link href='https://fonts.googleapis.com/css?family=Gruppo' rel='stylesheet'>
+</head>
+<body>
+    <header>
+        <h1>Etch-A-Sketch</h1>
+    </header>
+
+<!-- container for menu and grid -->
+        <div class="main-content">
+            
+            <!-- menu for buttons buttons -->
+            <div class="menu">
+                    <input type="color" id="select-color">
+                    <button id="blackBtn" onclick="changeColor('black')">Black</button>
+                    <button id="shaderBtn" onclick="changeColor('gray')">Shader</button>
+                    <button id="rainbowBtn" onclick="changeColor('rainbow')">rainbow</button>
+                    <button id="eraserBtn" onclick="changeColor('white')">Eraser</button>
+                    <button id="clearBtn" onclick="resetSketch()">clear</button>
+                    <button id="gridBtn">Grid ON/OFF</button>
+    
+                    <!--contains the slider for grid size -->
+                    <div class="slider-container">
+                        <label for="sizeslider" id="sizevalue"> Grid size: 30 x 30</label>
+                        <input type="range" min="1" max="64" value="16" id="sizeslider" onchange="changeSize(this.value)">
+                    </div>
+            </div>
+            
+            <!--div container for 16x16 grid and up -->
+            <div class="grid-container">
+                <div class="grid-panel"></div>
+            </div>
+
+        </div>
+    
+    <!--Footer -->
+    <footer>
+        <p> <a href="https://github.com/Ijoke2much"> Copyright © Ijoke2much </a></p>
+    </footer>
+</body>
+<script src="script.js"></script>
+</html>
