@@ -1,8 +1,8 @@
 const gridToggle = document.getElementById('gridBtn')
 const sizeValue = document.getElementById('sizevalue');
 let container = document.querySelector('.grid-panel');
-
-
+let panel = document.querySelector(".grid-container");
+let interval;
 function populateBoard(size) {
     let squares = container.querySelectorAll("div");
 
@@ -61,7 +61,7 @@ function resetSketch() {
 
 // allows you change from color mode to not color mode  
 let click = true;
-document.querySelector('body'),addEventListener("click", () => {
+document.querySelector('body').addEventListener("click", () => {
     click = !click;
 });
 
@@ -72,12 +72,27 @@ let color = "black";
 const colorPicker = document.getElementById('select-color')
 colorPicker.addEventListener('input', (e) => {
     color = e.target.value;
+    // changing color picker changes bg div color
+    panel.style.backgroundColor = color;
 });
 
 //changes the color from the buttons on the HTML 
-function changeColor(choice) {
+
+    function changeColor(choice = "black") {
     color = choice; 
-}
+    if (color === "rainbow") {
+        interval = setInterval(
+             () => {
+                panel.style.backgroundColor = `hsl(${Math.random() * 360}, 100%, 50%)`;
+            },500);
+    } 
+     else {
+        clearTimeout(interval);
+        panel.style.backgroundColor = choice;
+        }
+    }
+
+
 
 //grid toggle switch
 gridToggle.addEventListener("click", () => {
