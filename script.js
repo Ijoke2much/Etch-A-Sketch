@@ -1,4 +1,4 @@
-const gridToggle = document.getElementById('gridBtn')
+const gridToggle = document.getElementById('gridBtn');
 const sizeValue = document.getElementById('sizevalue');
 let container = document.querySelector('.grid-panel');
 let panel = document.querySelector(".grid-container");
